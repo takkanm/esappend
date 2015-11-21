@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+require "esappend"
+
+token, team_name, page_id = nil, nil, nil
+
+opt = OptionParser.new
+opt.on('-a --access-token access_token') {|a| token = a }
+opt.on('-t --team-name team_name') {|t| team_name = t }
+opt.on('-i --page-id') {|i| page_id = i }
+
+opt.parse!(ARGV)
+
+token     = ENV['ESA_ACCESS_TOKEN'] if ENV['ESA_ACCESS_TOKEN']
+team_name = ENV['ESA_TEAM_NAME']    if ENV['ESA_TEAM_NAME']
+page_id   = ENV['ESA_PAGE_ID']      if ENV['ESA_PAGE_ID']
+
+unless [token, team_name, page_id].all?
+  puts opt.help
+  exit 1
+end
+
+message = ARGV[0]
+
+page = Esappend::Page.new(token, team_name, page_id)
+page.append(message)
