@@ -21,6 +21,14 @@ Or install it yourself as:
 
 ## Usage
 
+### command
+
+```sh
+$ esappend -a XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -t esa_team -i page_id "hi append from esappend'
+```
+
+### library
+
 ```ruby
 require 'esappend'
 
