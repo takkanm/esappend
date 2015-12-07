@@ -53,4 +53,4 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Licence
 
-[MIT](https://github.com/takkanm/esappend/blob/master/LICENCE)
+[MIT](https://github.com/takkanm/esappend/blob/master/LICENSE.txt)
